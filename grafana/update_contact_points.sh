@@ -16,7 +16,7 @@ update_contact_point() {
     # replace secrets
     payload="${contact_point_json//__DISCORD_WEBHOOK_URL__/$SECRET_DISCORD_WEBHOOK_URL}"
 
-    response=$(curl --write-out "%{http_code}" --silent --output /dev/null --location "$GRAFANA_URL/api/v1/provisioning/contact-points" \
+    response=$(curl --write-out "%{http_code}" --output /dev/null --location "$GRAFANA_URL/api/v1/provisioning/contact-points" \
         --header 'Content-Type: application/json' \
         --header "Authorization: Bearer $GRAFANA_API_KEY" \
         --data "$payload")
@@ -27,7 +27,7 @@ update_contact_point() {
         echo "Updating contact point with UID: $uid"
 
         # Send PUT request
-        curl --location --silent "$GRAFANA_URL/api/v1/provisioning/contact-points/$uid" \
+        curl --location "$GRAFANA_URL/api/v1/provisioning/contact-points/$uid" \
             --request PUT \
             --header 'Content-Type: application/json' \
             --header "Authorization: Bearer $GRAFANA_API_KEY" \
