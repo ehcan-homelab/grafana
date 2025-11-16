@@ -5,19 +5,16 @@ scrape_configs:
   - job_name: 'Prometheus'
     static_configs:
       - targets: ['localhost:9090']
-
   - job_name: "Docker Cadvisor (102)"
     static_configs:
       - targets: ["10.10.0.102:9323"]
         labels:
           host: 'Docker (102)'
-
   - job_name: "notion-movie-metadata-updater Prometheus (102)"
     static_configs:
       - targets: ["10.10.0.102:9181"]
         labels:
           host: 'notion-movie-metadata-updater (102)'
-
   - job_name: "Traefik Prometheus & Cadvisor (107)"
     static_configs:
       - targets:
@@ -25,9 +22,13 @@ scrape_configs:
           - "10.10.0.107:8082"
         labels:
           host: 'Traefik (107)'
-
   - job_name: "Grafana Cadvisor (108)"
     static_configs:
       - targets: ["10.10.0.108:9323"]
         labels:
           host: 'Grafana (108)'
+  - job_name: "n8n metrics (102)"
+    static_configs:
+      - targets: ["10.10.0.102:5678"]
+        labels:
+          host: 'n8n (102)'
