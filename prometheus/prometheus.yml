@@ -10,11 +10,6 @@ scrape_configs:
       - targets: ["10.10.0.102:9323"]
         labels:
           host: 'Docker (102)'
-  - job_name: "n8n Cadvisor (103)"
-    static_configs:
-      - targets: ["10.10.0.103:9323"]
-        labels:
-          host: 'n8n (103)'
   - job_name: "notion-movie-metadata-updater Prometheus (102)"
     static_configs:
       - targets: ["10.10.0.102:9181"]
@@ -32,8 +27,8 @@ scrape_configs:
       - targets: ["10.10.0.108:9323"]
         labels:
           host: 'Grafana (108)'
-  - job_name: "n8n metrics (102)"
+  - job_name: "n8n (103)"
     static_configs:
-      - targets: ["10.10.0.102:5678"]
+      - targets: ["10.10.0.103:9323", "10.10.0.103:5678"]
         labels:
-          host: 'n8n (102)'
+          host: 'n8n (103)'
