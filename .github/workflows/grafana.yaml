@@ -1,4 +1,6 @@
 name: Update Dashboards & Deploy
+permissions:
+  contents: read
 on:
   push:
     branches:
