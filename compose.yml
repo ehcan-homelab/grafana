@@ -9,9 +9,12 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     environment:
-      - GF_LOG_LEVEL=error
-      - GF_AUTH_ANONYMOUS_ENABLED=true
-      - GF_SECURITY_ALLOW_EMBEDDING=true
+      GF_LOG_LEVEL: error
+      GF_AUTH_ANONYMOUS_ENABLED: true
+      GF_SECURITY_ALLOW_EMBEDDING: true
+      GF_ANALYTICS_CHECK_FOR_UPDATES: false
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: false
+      GF_ANALYTICS_REPORTING_ENABLED: false
 
   prometheus:
     image: prom/prometheus

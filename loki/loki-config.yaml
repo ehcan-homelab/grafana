@@ -39,3 +39,7 @@ limits_config:
 table_manager:
   retention_deletes_enabled: true
   retention_period: 336h  # 14 days
+
+analytics:
+  reporting_enabled: false
+  usage_stats_url: ""
